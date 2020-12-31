@@ -41,7 +41,10 @@ your-project/
 ```
 2. Controller
 
+On peut crée un controller avec la commande `php bin/console make:controller HomeController`
+
 Dans le Controller on a les importations, les routes, les fonctions et les variables
+
 ```php
 <?php
 
@@ -101,7 +104,8 @@ return $this->render('home/index.html.twig',['joueurs' => $joueurs]);
     {% endfor %}
   ```
   - Les commentaires   `{# Voici c’est un commentaire twig  #}`
-  - Les [filtres](https://twig.symfony.com/doc/3.x/filters/index.html)
+  - Les [filtres](https://twig.symfony.com/doc/3.x/filters/index.html) `{{ nom|upper }} {{ minitext|title }} {{ paragraphe|capitalize }}`
+  - Le URL  `<a href="{{ path('url_name') }}">ce moi</a>`
   
 4. Entity
   - Configuration de base de données depuis le fichier **.env** 
