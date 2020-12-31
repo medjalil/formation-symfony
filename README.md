@@ -113,5 +113,5 @@ return $this->render('home/index.html.twig',['joueurs' => $joueurs]);
   - Création d'une entité `php bin/console make:entity Post` 
   - Migrer l'entité créé  `php bin/console make:migration` et exécuter `php bin/console doctrine:migrations:migrate` 
   - Générer crud (create, read, update, delete) `php bin/console make:crud Post`
-5. template
+5. Template
   - Integration de [Bootstrap](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
