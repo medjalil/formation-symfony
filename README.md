@@ -19,6 +19,26 @@
 ##  Découverte de la structure d’une application Symfony
 
 1. Structure de symfony
+```
+your-project/
+├─ assets/
+├─ bin/
+│  └─ console
+├─ config/
+├─ public/
+│  └─ index.php
+├─ src/
+│  └─ ...
+├─ templates/
+├─ tests/
+├─ translations/
+├─ var/
+│  ├─ cache/
+│  ├─ log/
+│  └─ ...
+└─ vendor/
+
+```
 2. Controller
 
 Dans le Controller on a les importations, les routes, les fonctions et les variables
@@ -71,6 +91,16 @@ class HomeController extends AbstractController
 {% endif %}
   ```
   - le boucle for
+  ```php
+$joueurs=["Ali" => 31,"Salem"=>12,"Youssef"=>40,"Karim"=>9];
+return $this->render('home/index.html.twig',[
+'joueurs'=>$joueurs]);
+  ```
+  ```twig
+{% for prenom, age in joueurs %}
+<p>(Joueur numéro {{loop.index}} ): {{prenom}} a {{age}} ans</p> //{{loop.first}} // {{loop.last}}
+{% endfor %}
+  ```
   - les commentaires
   - les filtres
 4. Entity
