@@ -106,7 +106,7 @@ return $this->render('home/index.html.twig',['joueurs' => $joueurs]);
   - Les commentaires   `{# Voici c’est un commentaire twig  #}`
   - Les [filtres](https://twig.symfony.com/doc/3.x/filters/index.html) `{{ nom|upper }} {{ minitext|title }} {{ paragraphe|capitalize }}`
   - Le URL  `<a href="{{ path('url_name') }}">ce moi</a>`
-  
+  - L’héritage Twig extends
 4. Entity
   - Configuration de base de données depuis le fichier **.env** 
   - Création de la base de données `php bin/console doctrine:database:create`
