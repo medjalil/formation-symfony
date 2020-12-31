@@ -16,7 +16,7 @@
   - Lancer la commande : `composer create-project symfony/website-skeleton my_project_name`
   - Exécuter l'application avec la commande : `symfony serve`
   
-##  Découverte de la structure d’une application Symfony
+##  Découverte de l'application Symfony
 
 1. Structure de symfony
 ```
