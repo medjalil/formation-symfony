@@ -81,8 +81,8 @@ class HomeController extends AbstractController
 }
 ```
 3. Twig
-  - les variables `{{ title }}`
-  - le boucle [if](https://twig.symfony.com/doc/3.x/tags/if.html) 
+  - Le variable `{{ title }}`
+  - Le condition [if](https://twig.symfony.com/doc/3.x/tags/if.html) 
   ```twig
 {% set age = 10 %}
 {% if age >= 18 %}
