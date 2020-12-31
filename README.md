@@ -1,6 +1,7 @@
 # Formation Symfony
 ## On Commence
 1. Préparation de l’environnement
+
   - Installer [Visual C++ Redistribuable Packages](https://wampserver.aviatechno.net) (Requirement)
     - Si votre système est 32bits installer tous les packages x86 seulement
     - Si votre système est 64bits installer tous les packages x86 et x64
@@ -9,3 +10,74 @@
   - Installer [Git](https://git-scm.com/), Lancer la commande `git --version` pour vérifier
   - Installer [Symfony CLI](https://symfony.com/download), Lancer la commande `symfony` pour vérifier
   - Installer l’éditeur [VSCode](https://code.visualstudio.com/) ou [PHPStorm](https://www.jetbrains.com/fr-fr/phpstorm/download/#section=windows)
+  
+2. Création d'un nouveau projet Symfony
+
+  - Lancer la commande : `composer create-project symfony/website-skeleton my_project_name`
+  - Exécuter l'application avec la commande : `symfony serve`
+  
+##  Découverte de la structure d’une application Symfony
+
+1. Structure de symfony
+2. Controller
+
+Dans le Controller on a les importations, les routes, les fonctions et les variables
+```php
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class HomeController extends AbstractController
+{
+    /**
+     * @Route("/home", name="home")
+     */
+    public function index()
+    {
+        return new Response('Bonjour tous le monde');
+        //return new Response('<h1>Bonjour tous le monde</h1>');
+        /* return new Response("<html>
+        <head>
+        <title>Mon Application</title>
+        </head>
+        <body>
+        <h1>Bonjour tous le monde </h1>
+        <p>c'est ma première page Symfony</p>
+        </body>
+        </html>
+        ");*/
+        //return $this->render('home/index.html.twig');
+        /*return $this->render('home/index.html.twig',[
+            'title' => 'Bonjour à tous!'
+        ]);*/
+    }
+}
+```
+3. Twig
+  - les variables `{{ title }}`
+  - le boucle if 
+  ```twig
+{% set age = 10 %}
+{% if age >= 18 %}
+  <p>vous êtes un adulte</p>
+{% elseif age >= 12  %}
+  <p> vous êtes un adolescent<p>
+{% else %}
+  <p>vous êtes un enfant</p>
+{% endif %}
+  ```
+  - le boucle for
+  - les commentaires
+  - les filtres
+4. Entity
+  - configuration de base de donnees **.env** file
+  - creation de base de donnees `php bin/console doctrine:database:create`
+  - creation d'une entité `php bin/console make:entity Post` 
+  - migrer l'entité creé : `php bin/console make:migration` et `php bin/console doctrine:migrations:migrate`
+  - generate crud : `php bin/console make:crud Post`
+5. template
+  - Integration de [Bootstrap](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
