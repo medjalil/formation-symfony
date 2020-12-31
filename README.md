@@ -79,7 +79,7 @@ class HomeController extends AbstractController
 ```
 3. Twig
   - les variables `{{ title }}`
-  - le boucle if 
+  - le boucle [if](https://twig.symfony.com/doc/3.x/tags/if.html) 
   ```twig
 {% set age = 10 %}
 {% if age >= 18 %}
@@ -90,24 +90,24 @@ class HomeController extends AbstractController
   <p>vous êtes un enfant</p>
 {% endif %}
   ```
-  - le boucle for
+  - Le boucle [for](https://twig.symfony.com/doc/3.x/tags/for.html)
   ```php
 $joueurs=["Ali" => 31,"Salem"=>12,"Youssef"=>40,"Karim"=>9];
-return $this->render('home/index.html.twig',[
-'joueurs'=>$joueurs]);
+return $this->render('home/index.html.twig',['joueurs' => $joueurs]);
   ```
   ```twig
-{% for prenom, age in joueurs %}
-<p>(Joueur numéro {{loop.index}} ): {{prenom}} a {{age}} ans</p> //{{loop.first}} // {{loop.last}}
-{% endfor %}
+    {% for prenom, age in joueurs %}
+       <p>(Joueur numéro {{loop.index}} ): {{prenom}} a {{age}} ans</p>  {# {{loop.first}}  {{loop.last}}#}
+    {% endfor %}
   ```
-  - les commentaires
-  - les filtres
+  - Les commentaires   `{# Voici c’est un commentaire twig  #}`
+  - Les [filtres](https://twig.symfony.com/doc/3.x/filters/index.html)
+  
 4. Entity
-  - configuration de base de donnees **.env** file
-  - creation de base de donnees `php bin/console doctrine:database:create`
-  - creation d'une entité `php bin/console make:entity Post` 
-  - migrer l'entité creé : `php bin/console make:migration` et `php bin/console doctrine:migrations:migrate`
-  - generate crud : `php bin/console make:crud Post`
+  - Configuration de base de données depuis le fichier **.env** 
+  - Création de la base de données `php bin/console doctrine:database:create`
+  - Création d'une entité `php bin/console make:entity Post` 
+  - Migrer l'entité créé  `php bin/console make:migration` et exécuter `php bin/console doctrine:migrations:migrate` 
+  - Générer crud (create, read, update, delete) `php bin/console make:crud Post`
 5. template
   - Integration de [Bootstrap](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
